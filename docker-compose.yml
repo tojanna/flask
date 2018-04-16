@@ -1,7 +1,7 @@
 version: '2'
 services:
   web_app:
-    build:
+    build: .
     command: >
       gunicorn -b 0.0.0.0:8000
       --access-logfile -

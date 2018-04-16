@@ -1,4 +1,4 @@
-FROM python:3.6.5
+FROM python:3.6.5-alpine
 MAINTAINER Hendi Kusuma <cs.tojanna@gmail.com>
 
 ENV INSTALL_PATH /web_app
@@ -11,4 +11,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-gunicorn -b 0.0.0.0:8000 --access-logfile - "web_app.app:create_app()"
+CMD gunicorn -b 0.0.0.0:8000 --access-logfile - "web_app.app:create_app()"
